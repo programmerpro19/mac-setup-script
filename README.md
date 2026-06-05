@@ -16,6 +16,7 @@ This repository contains a modular, idempotent, and interactive set of shell scr
 ```text
 mac-setup-script/
 ├── README.md                # Documentation & instructions
+├── bootstrap.sh             # One-liner bootstrap script
 ├── setup.sh                 # Main interactive orchestrator entrypoint
 ├── lib/
 │   └── utils.sh             # Shared helper functions (logging, idempotency helpers)
@@ -33,17 +34,34 @@ mac-setup-script/
 
 ---
 
-## 💻 Quick Start (Full Setup)
+## 🚀 One-Line Installation
 
-1. Clone this repository to your local machine:
+On a fresh Mac, open Terminal and run the following command to bootstrap the entire setup:
+
+```bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/programmerpro19/mac-setup-script/main/bootstrap.sh)"
+```
+
+This script will automatically:
+1. Ensure Xcode Command Line Tools are installed (prompts you if missing).
+2. Clone this repository into `~/mac-setup-script`.
+3. Launch the interactive setup wizard allowing you to choose which parts to install or skip.
+
+---
+
+## 💻 Manual Installation (Alternative)
+
+If you prefer to run it manually, follow these steps:
+
+1. Clone this repository:
    ```bash
-   git clone https://github.com/YOUR_GITHUB_USERNAME/mac-setup-script.git
+   git clone https://github.com/programmerpro19/mac-setup-script.git
    cd mac-setup-script
    ```
 
 2. Make the scripts executable:
    ```bash
-   chmod +x setup.sh scripts/*.sh
+   chmod +x setup.sh scripts/*.sh bootstrap.sh
    ```
 
 3. Run the main orchestrator script:
@@ -52,6 +70,7 @@ mac-setup-script/
    ```
 
 4. Choose components to skip by entering their numbers separated by commas or spaces when prompted (e.g. `4, 6`), or press `Enter` to run all installations.
+
 
 ---
 
