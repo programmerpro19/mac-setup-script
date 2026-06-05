@@ -66,3 +66,58 @@ else
     brew install --cask google-gemini
     log_success "Google Gemini Desktop installed."
 fi
+
+# 7. Google Antigravity App
+if has_app "Antigravity"; then
+    log_warn "Google Antigravity App is already installed. Skipping..."
+else
+    log_info "Installing Google Antigravity App..."
+    brew install --cask antigravity
+    log_success "Google Antigravity App installed."
+fi
+
+# 8. OpenAI Codex App
+if has_app "Codex"; then
+    log_warn "OpenAI Codex App is already installed. Skipping..."
+else
+    log_info "Installing OpenAI Codex App..."
+    brew install --cask codex-app
+    log_success "OpenAI Codex App installed."
+fi
+
+# 9. Claude Code CLI
+if has_command claude; then
+    log_warn "Claude Code CLI is already installed. Skipping..."
+else
+    log_info "Installing Claude Code CLI..."
+    brew install --cask claude-code
+    log_success "Claude Code CLI installed."
+fi
+
+# 10. Google Antigravity CLI (agy)
+if has_command agy; then
+    log_warn "Google Antigravity CLI (agy) is already installed. Skipping..."
+else
+    log_info "Installing Google Antigravity CLI (agy)..."
+    brew install --cask antigravity-cli
+    log_success "Google Antigravity CLI (agy) installed."
+fi
+
+# 11. OpenAI Codex CLI
+if has_command codex; then
+    log_warn "OpenAI Codex CLI is already installed. Skipping..."
+else
+    log_info "Installing OpenAI Codex CLI..."
+    brew install --cask codex
+    log_success "OpenAI Codex CLI installed."
+fi
+
+# 12. OpenCode CLI
+if has_command opencode; then
+    log_warn "OpenCode CLI is already installed. Skipping..."
+else
+    log_info "Installing OpenCode CLI..."
+    brew install opencode
+    log_success "OpenCode CLI installed."
+fi
+

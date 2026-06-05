@@ -24,8 +24,8 @@ mac-setup-script/
     ├── 01_git.sh            # Global Git defaults and credentials caching
     ├── 02_cli_tools.sh      # Basic utilities (ripgrep, jq, fzf)
     ├── 03_languages.sh      # Compilers and runtimes (Node.js via fnm, Python3, Rust, Java)
-    ├── 04_ai_workloads.sh   # AI/ML workloads (Ollama, Docker, LM Studio, Claude, Gemini, AnythingLLM)
-    ├── 05_editors_terminals.sh # IDEs & terminals (VS Code, Zed, iTerm2, Ghostty, JetBrains Toolbox)
+    ├── 04_ai_workloads.sh   # AI/ML workloads (Ollama, Docker, LM Studio, Claude, Gemini, AnythingLLM, Antigravity, Codex, OpenCode, Claude Code)
+    ├── 05_editors_terminals.sh # IDEs & terminals (VS Code, Zed, iTerm2, Ghostty, JetBrains Toolbox, Antigravity IDE)
     ├── 06_browsers.sh       # Web browsers (Google Chrome + chromedriver, Brave, Firefox, Edge)
     ├── 07_communication.sh  # Desktop communication (Slack, Teams, WhatsApp, Signal)
     └── 08_utilities.sh      # System helpers (Rectangle, Macs Fan Control, Wireshark, Tailscale, Obsidian, VLC, Jiggler, Paseo)
@@ -93,12 +93,19 @@ Here is what gets installed by each component index:
    * AnythingLLM (cask).
    * Claude Desktop (cask).
    * Google Gemini (cask).
+   * Google Antigravity Desktop App (cask).
+   * OpenAI Codex Desktop App (cask).
+   * Claude Code CLI (cask).
+   * Google Antigravity CLI (`agy`) (cask).
+   * OpenAI Codex CLI (`codex`) (cask).
+   * OpenCode CLI (formula).
 6. **GUI Editors & Terminals**
    * Visual Studio Code + configures PATH symlink for `code` CLI.
    * Zed editor.
    * iTerm2 terminal.
    * Ghostty terminal.
    * JetBrains Toolbox.
+   * Google Antigravity IDE (cask).
 7. **Web Browsers**
    * Google Chrome + Chromedriver.
    * Brave Browser.

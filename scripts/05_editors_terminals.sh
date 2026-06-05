@@ -64,3 +64,13 @@ else
     brew install --cask jetbrains-toolbox
     log_success "JetBrains Toolbox installed."
 fi
+
+# 6. Google Antigravity IDE
+if has_app "Antigravity IDE"; then
+    log_warn "Google Antigravity IDE is already installed. Skipping..."
+else
+    log_info "Installing Google Antigravity IDE..."
+    brew install --cask antigravity-ide
+    log_success "Google Antigravity IDE installed."
+fi
+
