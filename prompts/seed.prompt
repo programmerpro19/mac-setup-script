@@ -1,0 +1,60 @@
+You are an expert systems engineer and macOS automation specialist. I want you to help me build a modern, modular, and idempotent macOS setup script repository called `mac-setup-script` initialized as a Git project. 
+
+Please execute this task sequentially through the following phases:
+
+---
+
+### Phase 1: Local System Audit & Analysis
+Scan my current laptop to identify all installed software, developer tools, and AI workloads. Run non-intrusive terminal commands to inspect:
+1. **Package Managers**: Homebrew, MacPorts, NPM, Pip, etc.
+2. **Languages & Runtimes**: Node.js, Python, Go, Rust, Ruby, Java (including version managers like nvm, fnm, pyenv, asdf, etc.).
+3. **AI/ML Tooling**: Ollama, Hugging Face CLI, Conda/Miniconda, Docker, Local LLM tools, MPS (Metal Performance Shaders) diagnostics, PyTorch/TensorFlow setups.
+4. **IDEs & Editors**: VS Code, Cursor, Zed, Xcode, NeoVim.
+5. **CLI Utilities & Shell**: Shell type (zsh/bash), configuration files (~/.zshrc, ~/.bash_profile), aliases, themes (Oh My Zsh, Starship), Git global configuration, and essential CLI tools (ripgrep, fzf, jq, tmux, etc.).
+6. **Applications (Casks)**: Web browsers, Slack, Discord, databases (PostgreSQL, Redis), etc.
+
+Present the discovered tools in a beautifully organized Markdown table categorized by "Category", "Tool/Software", "Version", and "Installation Method". 
+
+**STOP & WAIT FOR MY CONFIRMATION AND EDITS ON THIS LIST BEFORE PROCEEDING TO PHASE 2.**
+
+---
+
+### Phase 2: Repository Architecture Planning
+Once I approve the software list, design a modular and robust bash script framework. The directory structure must look like this:
+```
+mac-setup-script/
+├── README.md
+├── setup.sh                 # Main entry point and orchestrator
+├── lib/
+│   └── utils.sh             # Common helper functions (logging, check if command exists, etc.)
+└── scripts/
+    ├── 00_homebrew.sh       # Installs Homebrew & taps
+    ├── 01_git.sh            # Sets up git config
+    ├── 02_cli_tools.sh      # Essential CLI utilities via brew
+    ├── 03_languages.sh      # Compilers, runtimes, and version managers
+    ├── 04_ai_workloads.sh   # AI/ML-specific tools and runtimes
+    └── 05_apps.sh           # GUI Applications (casks)
+```
+
+**Architectural Requirements**:
+- **Idempotency**: Every script must be safe to run multiple times (e.g., if Homebrew is already installed, skip installation; if a line exists in `~/.zshrc`, do not append it again).
+- **Dependency Management**: Sub-scripts in `scripts/` must be executable independently. If a script (e.g., `04_ai_workloads.sh`) requires a prerequisite (e.g., Homebrew or Python), it must run a check function from `lib/utils.sh` to either execute the prerequisite script first or skip if already installed.
+- **Silent Parent Mode**: When run from the main `setup.sh` script, it should pass a flag (e.g., `PARENT_RUN=true`) to avoid redundant checks and run everything in a clean, sequential order.
+
+---
+
+### Phase 3: Research & Script Implementation
+For each approved tool:
+1. Conduct web searches to read the official setup guides, GitHub READMEs, and macOS installation best practices.
+2. Ensure shell configurations (e.g., PATH exports, autocomplete, aliases) are properly written to the correct user shell profile (~/.zshrc or ~/.bashrc).
+3. Write clean, readable shell scripts with helpful logs, color-coded outputs (green for success, yellow for skip, red for error), and comments.
+
+---
+
+### Phase 4: Git Initialization & Documentation
+1. Initialize the workspace as a Git repository.
+2. Create a detailed `README.md` containing:
+   - Clear installation and usage instructions (both for the full setup and running individual sub-scripts).
+   - The modular architecture overview.
+   - A checklist of what gets installed.
+   - Troubleshooting tips.
