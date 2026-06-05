@@ -2,6 +2,21 @@
 
 This repository contains a modular, idempotent, and interactive set of shell scripts to automate the configuration and installation of developer tools, runtimes, browsers, and utility applications on a fresh macOS machine (Intel or Apple Silicon).
 
+## 🚀 One-Line Installation
+
+On a fresh Mac, open Terminal and run the following command to bootstrap the entire setup:
+
+```bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/programmerpro19/mac-setup-script/main/bootstrap.sh)"
+```
+
+This script will automatically:
+1. Ensure Xcode Command Line Tools are installed (prompts you if missing).
+2. Clone this repository into `~/mac-setup-script`.
+3. Launch the interactive setup wizard allowing you to choose which parts to install or skip.
+
+---
+
 ## 🚀 Key Features
 
 * **Interactive Skip Menu**: Displays all setup components with numbers on launch, allowing you to skip any component by inputting their numbers (e.g. entering `5, 8` skips AI Workloads and System Utilities).
@@ -31,21 +46,6 @@ mac-setup-script/
     ├── 07_communication.sh  # Desktop communication (Slack, Teams, WhatsApp, Signal)
     └── 08_utilities.sh      # System helpers (Rectangle, Macs Fan Control, Wireshark, Tailscale, Obsidian, VLC, Jiggler, Paseo)
 ```
-
----
-
-## 🚀 One-Line Installation
-
-On a fresh Mac, open Terminal and run the following command to bootstrap the entire setup:
-
-```bash
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/programmerpro19/mac-setup-script/main/bootstrap.sh)"
-```
-
-This script will automatically:
-1. Ensure Xcode Command Line Tools are installed (prompts you if missing).
-2. Clone this repository into `~/mac-setup-script`.
-3. Launch the interactive setup wizard allowing you to choose which parts to install or skip.
 
 ---
 
